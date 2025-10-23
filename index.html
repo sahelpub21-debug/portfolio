@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakaria Gallouch - Senior Strategic Communications Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0a0e27;
+            --secondary: #1a1f3a;
+            --accent: #2e3a59;
+            --highlight: #4a69bd;
+            --gold: #f39c12;
+            --text: #ffffff;
+            --text-secondary: #a8b2d1;
+            --text-muted: #64748b;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold), var(--highlight));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+        
+        .nav-menu a.active {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background: 
+                radial-gradient(ellipse at top right, rgba(74, 105, 189, 0.15), transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(243, 156, 18, 0.15), transparent 50%),
+                var(--primary);
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text {
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 1s ease;
+        }
+        
+        .hero-image-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .hero-label {
+            font-size: 0.9rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--highlight));
+            color: white;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(243, 156, 18, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Case Studies Section */
+        .case-studies {
+            padding: 5rem 2rem;
+            background: var(--secondary);
+        }
+        
+        .section-header {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .section-label {
+            font-size: 0.9rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .case-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            gap: 2rem;
+        }
+        
+        /* Case Study Cards */
+        .case-card {
+            background: var(--primary);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border-color: var(--gold);
+        }
+        
+        .case-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+        }
+        
+        .case-card.regular {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        .case-grid-bottom {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .case-image {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-card.featured .case-image {
+            height: 100%;
+            min-height: 400px;
+        }
+        
+        .case-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .case-category {
+            font-size: 0.85rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .case-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .case-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .case-metrics {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .metric {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        
+        .case-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--highlight);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .case-link:hover {
+            color: var(--gold);
+            gap: 1rem;
+        }
+        
+        /* Individual Case Study Pages */
+        .case-study-page {
+            display: none;
+            padding-top: 5rem;
+            min-height: 100vh;
+            background: var(--primary);
+        }
+        
+        .case-study-page.active {
+            display: block;
+        }
+        
+        .case-hero {
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, var(--secondary), var(--primary));
+        }
+        
+        .case-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .case-hero-text {
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .case-hero-image {
+            height: 500px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--gold);
+            gap: 1rem;
+        }
+        
+        .case-study-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .case-study-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .case-study-meta {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .meta-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-value {
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        /* Case Study Content Sections */
+        .case-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .case-section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        
+        .case-section-content {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .case-section-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .challenge-box {
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(74, 105, 189, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            margin: 2rem 0;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .solution-card {
+            background: rgba(255,255,255,0.03);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+            border-color: var(--gold);
+        }
+        
+        .solution-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gold);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+        
+        .solution-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .solution-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .results-showcase {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .result-item {
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .testimonial-box {
+            background: rgba(255,255,255,0.03);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .testimonial-role {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 4rem 2rem 2rem;
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .footer-about p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content,
+            .case-hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-card.featured {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-grid-bottom {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">ZG</div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('home')" class="nav-link active">Home</a></li>
+                <li><a href="#" onclick="showPage('abl')" class="nav-link">ABL Corp</a></li>
+                <li><a href="#" onclick="showPage('ikea')" class="nav-link">IKEA</a></li>
+                <li><a href="#" onclick="showPage('fan4all')" class="nav-link">FAN4ALL</a></li>
+                <li><a href="#" onclick="showPage('glovo')" class="nav-link">GLOVO</a></li>
+                <li><a href="#" onclick="showPage('atda')" class="nav-link">ATDA</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Home Page -->
+    <div id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-label">Strategic Communications Expert</p>
+                    <h1 class="hero-title">Zakaria Gallouch</h1>
+                    <p class="hero-subtitle">Architecting Narratives That Drive Business Impact</p>
+                    <p class="hero-description">
+                        Senior communications strategist with over a decade of experience transforming brand stories for multinational corporations and innovative start-ups. Specializing in integrated communications, crisis management, and content strategy across aviation, finance, technology, and retail sectors.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#case-studies" class="btn btn-primary">View Case Studies →</a>
+                        <a href="mailto:contact@example.com" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-placeholder">
+                        [Professional Portrait]
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Case Studies Grid -->
+        <section id="case-studies" class="case-studies">
+            <div class="section-header">
+                <p class="section-label">Selected Work</p>
+                <h2 class="section-title">Strategic Case Studies</h2>
+                <p class="section-description">
+                    Deep-dive into transformative communications campaigns that delivered measurable business impact across diverse industries and markets.
+                </p>
+            </div>
+            
+            <div class="case-grid">
+                <!-- Featured Case: ABL Corporation -->
+                <a href="#" onclick="showPage('abl'); return false;" class="case-card featured">
+                    <div class="case-image">
+                        [ABL Corporation Brand Strategy Visual]
+                    </div>
+                    <div class="case-content">
+                        <p class="case-category">Multi-Industry Conglomerate</p>
+                        <h3 class="case-title">ABL Corporation</h3>
+                        <p class="case-description">
+                            Orchestrated comprehensive brand transformation across aviation, maritime, agriculture, and hospitality divisions. Developed unified messaging architecture while maintaining sector-specific expertise, resulting in 42% increase in stakeholder engagement.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="metric">
+                                <span class="metric-value">4</span>
+                                <span class="metric-label">Brand Strategies</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">30+</span>
+                                <span class="metric-label">Thought Leadership Pieces</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">6-Month</span>
+                                <span class="metric-label">Editorial Roadmap</span>
+                            </div>
+                        </div>
+                        <span class="case-link">Explore Full Case Study →</span>
+                    </div>
+                </a>
+                
+                <!-- Regular Cases Grid -->
+                <div class="case-grid-bottom">
+                    <!-- IKEA Case -->
+                    <a href="#" onclick="showPage('ikea'); return false;" class="case-card regular">
+                        <div class="case-image">
+                            [IKEA Morocco Campaign Visual]
+                        </div>
+                        <div class="case-content">
+                            <p class="case-category">Retail Campaign</p>
+                            <h3 class="case-title">IKEA Morocco Launch</h3>
+                            <p class="case-description">
+                                Secured and executed IKEA's global "Living With Children" campaign launch in Morocco, managing integrated marketing across TV, OOH, and digital channels during strategic Ramadan timing.
+                            </p>
+                            <span class="case-link">View Case Study →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- FAN4ALL Case -->
+                    <a href="#" onclick="showPage('fan4all'); return false;" class="case-card regular">
+                        <div class="case-image">
+                            [FAN4ALL Platform Visual]
+                        </div>
+                        <div class="case-content">
+                            <p class="case-category">Sports Tech Platform</p>
+                            <h3 class="case-title">FAN4ALL Digital Transformation</h3>
+                            <p class="case-description">
+                                Drove comprehensive communications strategy for French sports marketing platform, achieving €100K+ in PR value and 2.7M impressions through integrated campaigns.
+                            </p>
+                            <span class="case-link">View Case Study →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- GLOVO Case -->
+                    <a href="#" onclick="showPage('glovo'); return false;" class="case-card regular">
+                        <div class="case-image">
+                            [GLOVO Crisis Campaign Visual]
+                        </div>
+                        <div class="case-content">
+                            <p class="case-category">Crisis Communications</p>
+                            <h3 class="case-title">GLOVO Brand Resilience</h3>
+                            <p class="case-description">
+                                Navigated complex diplomatic tensions through strategic "Humans of Glovo" campaign, achieving 1.3M organic reach while strengthening local market position.
+                            </p>
+                            <span class="case-link">View Case Study →</span>
+                        </div>
+                    </a>
+                    
+                    <!-- ATDA Case -->
+                    <a href="#" onclick="showPage('atda'); return false;" class="case-card regular">
+                        <div class="case-image">
+                            [ATDA Summit Visual]
+                        </div>
+                        <div class="case-content">
+                            <p class="case-category">Tech Conference</p>
+                            <h3 class="case-title">Africa Digital Summit</h3>
+                            <p class="case-description">
+                                Positioned 10th anniversary Africa Digital Transformation Summit as premier tech gathering, achieving 3M LinkedIn reach and 42% community growth.
+                            </p>
+                            <span class="case-link">View Case Study →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">€100K+</div>
+                    <div class="stat-label">PR Value Generated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8M+</div>
+                    <div class="stat-label">Total Reach</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Strategic Campaigns</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- ABL Corporation Case Study Page -->
+    <div id="abl-page" class="case-study-page">
+        <section class="case-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <a href="#" onclick="showPage('home'); return false;" class="back-link">← Back to Portfolio</a>
+                    <h1 class="case-study-title">ABL Corporation</h1>
+                    <p class="case-study-subtitle">
+                        Strategic transformation of a multi-industry conglomerate's brand architecture, unifying communications across aviation, maritime, agriculture, and hospitality divisions while maintaining sector-specific expertise.
+                    </p>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Client</span>
+                            <span class="meta-value">ABL Corporation</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Duration</span>
+                            <span class="meta-value">8 Months</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Senior Strategic Consultant</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Industries</span>
+                            <span class="meta-value">Aviation, Maritime, Agriculture, Hospitality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    [ABL Corporation Hero Visual]
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">The Challenge</h2>
+            <div class="case-section-content">
+                <div class="challenge-box">
+                    <p>ABL Corporation, a diversified international group operating across four distinct industries, faced a critical communications challenge. Each division operated in silos with disparate messaging, diluting the group's overall market authority and creating confusion among stakeholders.</p>
+                    <p>The challenge was to create a unified brand narrative that would strengthen the masterbrand while allowing each division to maintain its unique industry positioning and technical expertise.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Strategic Approach</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">01</div>
+                    <h3 class="solution-title">Brand Architecture Redesign</h3>
+                    <p class="solution-description">Developed a comprehensive masterbrand positioning framework that unified the corporate narrative while preserving division-specific value propositions.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">02</div>
+                    <h3 class="solution-title">Content Ecosystem Development</h3>
+                    <p class="solution-description">Created integrated editorial roadmaps with SEO-optimized topic clusters, aligning content production with business objectives across all divisions.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">03</div>
+                    <h3 class="solution-title">Thought Leadership Program</h3>
+                    <p class="solution-description">Established executive thought leadership frameworks, producing 30+ articles positioning ABL leaders as industry authorities.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">04</div>
+                    <h3 class="solution-title">Governance Framework</h3>
+                    <p class="solution-description">Implemented editorial workflows and approval processes ensuring consistent brand voice across multi-stakeholder environments.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Execution Highlights</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">[Brand Guidelines Document]</div>
+                <div class="gallery-item">[Editorial Calendar System]</div>
+                <div class="gallery-item">[LinkedIn Content Strategy]</div>
+                <div class="gallery-item">[Aviation Finance Articles]</div>
+                <div class="gallery-item">[Sustainability Storytelling]</div>
+                <div class="gallery-item">[Stakeholder Communications]</div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Measurable Impact</h2>
+            <div class="results-showcase">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">4</div>
+                        <div class="result-label">Integrated Brand Strategies</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">30+</div>
+                        <div class="result-label">Thought Leadership Articles</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">42%</div>
+                        <div class="result-label">Engagement Increase</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">6-Month</div>
+                        <div class="result-label">Content Pipeline</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Client Testimonial</h2>
+            <div class="testimonial-box">
+                <p class="testimonial-quote">
+                    "Zakaria's strategic vision transformed our fragmented communications into a powerful, unified narrative. His ability to understand complex B2B environments while maintaining creative excellence is exceptional."
+                </p>
+                <p class="testimonial-author">Executive Leadership</p>
+                <p class="testimonial-role">ABL Corporation</p>
+            </div>
+        </section>
+    </div>
+    
+    <!-- IKEA Case Study Page -->
+    <div id="ikea-page" class="case-study-page">
+        <section class="case-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <a href="#" onclick="showPage('home'); return false;" class="back-link">← Back to Portfolio</a>
+                    <h1 class="case-study-title">IKEA Morocco</h1>
+                    <p class="case-study-subtitle">
+                        Successfully launched IKEA's global "Living With Children" campaign in Morocco, orchestrating a multi-channel marketing strategy that resonated with local culture during the strategic Ramadan period.
+                    </p>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Client</span>
+                            <span class="meta-value">IKEA Morocco</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Campaign Period</span>
+                            <span class="meta-value">January - March 2024</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Senior Account Manager</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Channels</span>
+                            <span class="meta-value">TV, OOH, Digital, PR</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    [IKEA Campaign Hero Visual]
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Campaign Background</h2>
+            <div class="case-section-content">
+                <p>IKEA's global "Living With Children" campaign needed careful localization for the Moroccan market. The challenge was to maintain the campaign's universal appeal while ensuring cultural relevance and timing the launch to maximize impact during Ramadan, a peak shopping period.</p>
+                <p>As Senior Account Manager, I led the end-to-end campaign execution, from initial strategy development through creative adaptation and multi-channel deployment.</p>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Strategic Execution</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">01</div>
+                    <h3 class="solution-title">Cultural Adaptation</h3>
+                    <p class="solution-description">Localized global creative assets with Moroccan family dynamics, ensuring authentic representation while maintaining brand consistency.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">02</div>
+                    <h3 class="solution-title">Media Strategy</h3>
+                    <p class="solution-description">Orchestrated integrated media plan across TV commercials, strategic billboard placements, and digital activations for maximum reach.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">03</div>
+                    <h3 class="solution-title">Ramadan Timing</h3>
+                    <p class="solution-description">Strategic campaign launch timing to coincide with Ramadan shopping patterns, maximizing engagement during peak family gathering preparations.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">04</div>
+                    <h3 class="solution-title">PR Amplification</h3>
+                    <p class="solution-description">Coordinated press strategy generating extensive media coverage and reinforcing IKEA's commitment to Moroccan families.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Creative Assets</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">[TV Commercial Storyboard]</div>
+                <div class="gallery-item">[Billboard Adaptations]</div>
+                <div class="gallery-item">[Digital Campaign Assets]</div>
+                <div class="gallery-item">[In-Store Activations]</div>
+                <div class="gallery-item">[Social Media Content]</div>
+                <div class="gallery-item">[Press Coverage]</div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Campaign Impact</h2>
+            <div class="results-showcase">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">3 Months</div>
+                        <div class="result-label">Campaign Duration</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">4 Channels</div>
+                        <div class="result-label">Integrated Media</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">National</div>
+                        <div class="result-label">Coverage Achieved</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">Strengthened</div>
+                        <div class="result-label">Brand Presence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- FAN4ALL Case Study Page -->
+    <div id="fan4all-page" class="case-study-page">
+        <section class="case-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <a href="#" onclick="showPage('home'); return false;" class="back-link">← Back to Portfolio</a>
+                    <h1 class="case-study-title">FAN4ALL Platform</h1>
+                    <p class="case-study-subtitle">
+                        Transformed a French sports marketing platform's digital presence through integrated PR, social media, and e-commerce strategies, achieving exceptional ROI and engagement metrics.
+                    </p>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Client</span>
+                            <span class="meta-value">FAN4ALL</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Duration</span>
+                            <span class="meta-value">12 Months</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Communications Strategist</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Focus</span>
+                            <span class="meta-value">Digital Transformation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    [FAN4ALL Platform Visual]
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Platform Overview</h2>
+            <div class="case-section-content">
+                <p>FAN4ALL is an innovative French sports marketing platform combining online ticketing, club merchandising, and exclusive event access. The platform needed a comprehensive communications overhaul to establish market leadership and drive user acquisition.</p>
+                <p>I developed and executed an integrated strategy encompassing brand positioning, PR campaigns, social media management, and e-commerce optimization.</p>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Strategic Initiatives</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">01</div>
+                    <h3 class="solution-title">Brand Platform Development</h3>
+                    <p class="solution-description">Created comprehensive persona analysis and unique selling proposition, aligning messaging across all stakeholder touchpoints.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">02</div>
+                    <h3 class="solution-title">PR Strategy</h3>
+                    <p class="solution-description">Structured media relations framework generating €100K+ in earned media value and securing 12 major publications.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">03</div>
+                    <h3 class="solution-title">Social Media Excellence</h3>
+                    <p class="solution-description">Achieved 14.45% LinkedIn engagement and 9.92% Facebook engagement through targeted content strategies.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">04</div>
+                    <h3 class="solution-title">E-commerce Optimization</h3>
+                    <p class="solution-description">Redesigned UX architecture and implemented SEO strategies, launching 10+ monthly campaigns aligned with sporting events.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Campaign Showcase</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">[Partnership Announcements]</div>
+                <div class="gallery-item">[Social Media Campaigns]</div>
+                <div class="gallery-item">[E-commerce Interface]</div>
+                <div class="gallery-item">[Event Activations]</div>
+                <div class="gallery-item">[Influencer Collaborations]</div>
+                <div class="gallery-item">[Mobile App Launch]</div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Measurable Results</h2>
+            <div class="results-showcase">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">€100K+</div>
+                        <div class="result-label">PR Value Generated</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">2.7M</div>
+                        <div class="result-label">Total Impressions</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">14.45%</div>
+                        <div class="result-label">LinkedIn Engagement</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">2.1M</div>
+                        <div class="result-label">Social Reach</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- GLOVO Case Study Page -->
+    <div id="glovo-page" class="case-study-page">
+        <section class="case-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <a href="#" onclick="showPage('home'); return false;" class="back-link">← Back to Portfolio</a>
+                    <h1 class="case-study-title">GLOVO Morocco</h1>
+                    <p class="case-study-subtitle">
+                        Navigated complex diplomatic tensions through strategic crisis communications and the creation of "Humans of Glovo" campaign, transforming potential brand crisis into strengthened local market position.
+                    </p>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Client</span>
+                            <span class="meta-value">GLOVO</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Context</span>
+                            <span class="meta-value">Crisis Management</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">Crisis Communications Consultant</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Impact</span>
+                            <span class="meta-value">1.3M Organic Reach</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    [GLOVO Campaign Visual]
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Crisis Context</h2>
+            <div class="case-section-content">
+                <div class="challenge-box">
+                    <p>Amid diplomatic tensions between Morocco and Spain following the Polisario leader incident, Spanish brands faced potential boycotts in Morocco. GLOVO, as a Spanish-origin company, needed immediate strategic intervention to protect its market position.</p>
+                    <p>The challenge was to demonstrate GLOVO's deep commitment to Morocco while navigating sensitive political dynamics and maintaining operational continuity.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Strategic Response</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">01</div>
+                    <h3 class="solution-title">Localization Strategy</h3>
+                    <p class="solution-description">Positioned GLOVO as a brand with deep local ties, emphasizing Moroccan team leadership and commitment to local communities.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">02</div>
+                    <h3 class="solution-title">Humans of Glovo Campaign</h3>
+                    <p class="solution-description">Created authentic video series featuring delivery partners sharing their stories, humanizing the brand and building emotional connections.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">03</div>
+                    <h3 class="solution-title">CSR Initiatives</h3>
+                    <p class="solution-description">Launched targeted programs focusing on road safety, ethical delivery practices, and improved HR policies for partners.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">04</div>
+                    <h3 class="solution-title">Community Engagement</h3>
+                    <p class="solution-description">Amplified local voices and stories, showcasing GLOVO's role in supporting Moroccan entrepreneurs and families.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Campaign Episodes</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">[Episode 1: Who are the Glovers?]</div>
+                <div class="gallery-item">[Episode 2: Dishes of Glovers]</div>
+                <div class="gallery-item">[Episode 3: Road Safety]</div>
+                <div class="gallery-item">[Episode 4: Passions of Glovers]</div>
+                <div class="gallery-item">[Best-of Compilation]</div>
+                <div class="gallery-item">[Social Media Amplification]</div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Crisis Mitigation Success</h2>
+            <div class="results-showcase">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">1.3M</div>
+                        <div class="result-label">Organic Facebook Reach</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">13.5K</div>
+                        <div class="result-label">Engagements</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">4 Episodes</div>
+                        <div class="result-label">Video Series</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">Positive</div>
+                        <div class="result-label">Sentiment Achieved</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- ATDA Case Study Page -->
+    <div id="atda-page" class="case-study-page">
+        <section class="case-hero">
+            <div class="case-hero-content">
+                <div class="case-hero-text">
+                    <a href="#" onclick="showPage('home'); return false;" class="back-link">← Back to Portfolio</a>
+                    <h1 class="case-study-title">Africa Digital Transformation Summit</h1>
+                    <p class="case-study-subtitle">
+                        Led communications for the 10th anniversary of ATDA, positioning it as Africa's premier digital transformation event while achieving 42% community growth and 3M LinkedIn reach.
+                    </p>
+                    <div class="case-study-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Client</span>
+                            <span class="meta-value">CIO Mag / ATDA</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Event</span>
+                            <span class="meta-value">10th Anniversary Summit</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Role</span>
+                            <span class="meta-value">PR & Content Director</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-value">UM6P Benguerir, Morocco</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-hero-image">
+                    [ATDA Summit Visual]
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Summit Background</h2>
+            <div class="case-section-content">
+                <p>The Africa Digital Transformation Summit (ATDA) reached a milestone 10th anniversary, marking its first-ever staging on African soil at Mohammed VI Polytechnic University. This strategic move aimed to deepen connections with Africa's innovation ecosystems.</p>
+                <p>As PR & Content Director, I orchestrated a comprehensive communications strategy to elevate the summit's profile and establish it as the continent's premier digital transformation gathering.</p>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Communications Strategy</h2>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">01</div>
+                    <h3 class="solution-title">KOL Engagement</h3>
+                    <p class="solution-description">Leveraged Key Opinion Leaders through strategic interviews and articles, emphasizing Morocco's role as African tech hub.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">02</div>
+                    <h3 class="solution-title">Documentary Production</h3>
+                    <p class="solution-description">Produced "Horizon Digital" documentary following founder's journey, showcasing event evolution and stakeholder connections.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">03</div>
+                    <h3 class="solution-title">Digital Storytelling</h3>
+                    <p class="solution-description">Created "African Dream" video series featuring tech leaders sharing visions for Africa's digital future.</p>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-number">04</div>
+                    <h3 class="solution-title">Content Amplification</h3>
+                    <p class="solution-description">Published 60+ articles across web and print, establishing thought leadership in African digital transformation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Content Production</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">[Horizon Digital Documentary]</div>
+                <div class="gallery-item">[African Dream Series]</div>
+                <div class="gallery-item">[LinkedIn Campaigns]</div>
+                <div class="gallery-item">[Press Coverage]</div>
+                <div class="gallery-item">[Event Photography]</div>
+                <div class="gallery-item">[Partner Content]</div>
+            </div>
+        </section>
+        
+        <section class="case-section">
+            <h2 class="case-section-title">Summit Impact</h2>
+            <div class="results-showcase">
+                <div class="results-grid">
+                    <div class="result-item">
+                        <div class="result-number">3M</div>
+                        <div class="result-label">LinkedIn Reach</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">42%</div>
+                        <div class="result-label">Community Growth</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">60+</div>
+                        <div class="result-label">Articles Published</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="result-number">400</div>
+                        <div class="result-label">Engagement Increase</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Zakaria Gallouch</h3>
+                <p>Senior Strategic Communications Consultant with over 10 years of experience delivering measurable business impact through integrated brand strategies, crisis management, and content excellence.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Case Studies</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('abl')">ABL Corporation</a></li>
+                    <li><a href="#" onclick="showPage('ikea')">IKEA Morocco</a></li>
+                    <li><a href="#" onclick="showPage('fan4all')">FAN4ALL Platform</a></li>
+                    <li><a href="#" onclick="showPage('glovo')">GLOVO Crisis Management</a></li>
+                    <li><a href="#" onclick="showPage('atda')">Africa Digital Summit</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Expertise</h4>
+                <ul>
+                    <li><a href="#">Strategic Communications</a></li>
+                    <li><a href="#">Crisis Management</a></li>
+                    <li><a href="#">Content Strategy</a></li>
+                    <li><a href="#">Brand Development</a></li>
+                    <li><a href="#">Media Relations</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Zakaria Gallouch - Senior Strategic Communications Professional</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Page navigation
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page, .case-study-page').forEach(page => {
+                page.classList.remove('active');
+                page.style.display = 'none';
+            });
+            
+            // Show selected page
+            let targetPage;
+            if (pageId === 'home') {
+                targetPage = document.getElementById('home-page');
+                targetPage.classList.add('active');
+                targetPage.style.display = 'block';
+            } else {
+                targetPage = document.getElementById(pageId + '-page');
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    targetPage.style.display = 'block';
+                }
+            }
+            
+            // Update nav active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.textContent.toLowerCase().includes(pageId) || 
+                    (pageId === 'home' && link.textContent === 'Home')) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.case-card, .stat-card, .solution-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
